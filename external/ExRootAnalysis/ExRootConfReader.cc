@@ -61,7 +61,7 @@ void ExRootConfReader::ReadFile(const char *fileName, bool isTop)
   int file_length = inputFileStream.tellg();
   inputFileStream.seekg(0, ios::beg);
   inputFileStream.clear();
-  char *cmdBuffer = new char[file_length];
+  char *cmdBuffer = new char[file_length+1];
   inputFileStream.read(cmdBuffer, file_length);
 
   Tcl_Obj *cmdObjPtr = Tcl_NewObj();
